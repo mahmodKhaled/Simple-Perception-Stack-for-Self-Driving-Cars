@@ -1,1 +1,1 @@
-# Computer_Vision_Project
+# Simple Perception Stack for Self-Driving Cars
