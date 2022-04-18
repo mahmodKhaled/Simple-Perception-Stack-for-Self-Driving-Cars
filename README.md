@@ -6,4 +6,4 @@ In this first phase, our goal is to write a **_software pipeline_** to identify 
 ![expected output](https://user-images.githubusercontent.com/54672453/163658944-d04f1d58-98ae-4017-b196-ba660c7d4a1b.png)
 
 ## Code Status
-![build](https://img.shields.io/badge/build-not%20finished-critical)
+![build](https://img.shields.io/badge/Build-in%20progress-orange)
