@@ -7,6 +7,15 @@ In this first phase, our goal is to write a **_software pipeline_** to identify 
 
 ## Installation Guidelines
 
+The **_jupyter Notebook_** contains the code and Presentaion , we have written the actual codes plus some comments explaining what we were doing through out the project 
+
+the **.py** file contains the file that will run in the **_CMD_**
+
+### Files are :
+> test_image_detection.ipynb this is the notebook
+
+> test_image_detection.py this is the python script that will run through **_CMD_**
+
 ## Code Status
 ![build](https://img.shields.io/badge/Build-in%20progress-orange)
 
