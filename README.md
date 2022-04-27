@@ -36,7 +36,7 @@ the parameters to the **_CMD_** have to be as following:
 ```
 python test_image_detection.py #First_Parameter #Second_parameter #Third_parameter #Fourth_parameter
 ```
-**Smaple Example:**
+**Sample Example:**
 
 ```
 python test_image_detection.py test_images/test1.jpg test_images 0 1
