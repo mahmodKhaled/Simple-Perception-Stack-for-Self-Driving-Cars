@@ -95,7 +95,7 @@ def make_coordinates (image, line_parameters):
     #slope, intercept = line_parameters
     height= image.shape[0]
     y1=height
-    y2=int(y1*(3/5))
+    y2=int(y1*(0.8))
     x1=int((y1-intercept)/slope)
     x2=int((y2-intercept)/slope)
     
@@ -171,11 +171,13 @@ def frame_process(test_image , debug_mode):
     image_height = RGB_test_image.shape[0]
     hls_test_image = cv.cvtColor(RGB_test_image , cv.COLOR_RGB2HLS)
     h , l , s = cv.split(hls_test_image)
-    blurred_test_image = cv.GaussianBlur(s , (5,5) , 0)
-    canny_test_image = cv.Canny(blurred_test_image , 200 , 255)
+    ret,thresh1 = cv.threshold(gray_test_image,120, 255,  cv.THRESH_BINARY+cv.THRESH_OTSU)
+    combined = cv.addWeighted(thresh1,0.3,s, 0.7,0)
+    blurred_test_image = cv.GaussianBlur(combined , (5,5) , 0)
+    canny_test_image = cv.Canny(blurred_test_image , 70 , 255)#######
     vertices_of_region_of_interest = [(100 , 660) , (image_width / 2 , image_height / 2 + 65) , (1200 , 660)]
     cropped_test_image = region_of_intereset(canny_test_image , np.array([vertices_of_region_of_interest] , np.int64))
-    hough_lines = cv.HoughLinesP(cropped_test_image , 1 , np.pi / 180 , 20 , minLineLength = 7 , maxLineGap = 1)
+    hough_lines = cv.HoughLinesP(cropped_test_image , 1 , np.pi / 180 , 20 , minLineLength = 2 , maxLineGap = 50)
     polyfill_vertices = []
     averaged_lines=average_slope_intercept(RGB_test_image,hough_lines)
     line_image=display_lines(RGB_test_image,averaged_lines)
