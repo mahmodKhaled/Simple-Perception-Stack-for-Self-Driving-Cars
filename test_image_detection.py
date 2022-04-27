@@ -205,49 +205,53 @@ def frame_process(test_image , debug_mode):
 
 
 # ## Testing the previous functions on the test images
-debug_mode = int(sys.argv[4])
-if int(sys.argv[3]) == 0: # image
-    # ### Read the test image
-    test_image = cv.imread(sys.argv[1])
-    '''cv.imshow('test image', test_image)
-    cv.waitKey(0)'''
-    print(debug_mode)
-    #show_image(test_image)
-    #cv.waitKey(0)
-    #print(os.getcwd())
-    outputImage = frame_process(test_image, debug_mode)
-    show_image(outputImage)  ##########
-    directory = sys.argv[2]
-    imageName = 'output.jpg'
-    os.chdir(directory)
-    isSaved = cv.imwrite(imageName, outputImage)
-    if (isSaved):
+def main() :
+    debug_mode = int(sys.argv[4])
+    if int(sys.argv[3]) == 0: # image
+        # ### Read the test image
+        test_image = cv.imread(sys.argv[1])
+        '''cv.imshow('test image', test_image)
+        cv.waitKey(0)'''
+        print(debug_mode)
+        #show_image(test_image)
+        #cv.waitKey(0)
+        #print(os.getcwd())
+        outputImage = frame_process(test_image, debug_mode)
+        show_image(outputImage)  ##########
+        directory = sys.argv[2]
+        imageName = 'output.jpg'
+        os.chdir(directory)
+        isSaved = cv.imwrite(imageName, outputImage)
+        if (isSaved):
+            print('Successfully saved')
+    elif int(sys.argv[3]) == 1:  # video
+        cap = cv.VideoCapture(sys.argv[1])
+        fps = cap.get(cv.CAP_PROP_FPS)
+        #print(fps)
+        frame_width = int(cap.get(3))
+        frame_height = int(cap.get(4))
+        #print(frame_height, frame_width)
+        directory = sys.argv[2]
+        os.chdir(directory)
+        videoName = 'output.mp4'
+        frame_size = (frame_width, frame_height)
+        outputVideo = cv.VideoWriter(videoName, cv.VideoWriter_fourcc(*'mp4v'), fps, frame_size)
+        #paused = False
+
+        while(cap.isOpened()):
+            success, frame = cap.read()
+            if not success:
+                break
+            processed_frame = frame_process(frame, debug_mode)
+            outputVideo.write(processed_frame)
+            print('processing video ...')
+
+            cv.imshow("result", processed_frame)
+            if cv.waitKey(1)  == ord('q'):
+                break
         print('Successfully saved')
-elif int(sys.argv[3]) == 1:  # video
-    cap = cv.VideoCapture(sys.argv[1])
-    fps = cap.get(cv.CAP_PROP_FPS)
-    #print(fps)
-    frame_width = int(cap.get(3))
-    frame_height = int(cap.get(4))
-    #print(frame_height, frame_width)
-    directory = sys.argv[2]
-    os.chdir(directory)
-    videoName = 'output.mp4'
-    frame_size = (frame_width, frame_height)
-    outputVideo = cv.VideoWriter(videoName, cv.VideoWriter_fourcc(*'mp4v'), fps, frame_size)
-    #paused = False
+        cap.release()
+        outputVideo.release()
 
-    while(cap.isOpened()):
-        success, frame = cap.read()
-        if not success:
-            break
-        processed_frame = frame_process(frame, debug_mode)
-        outputVideo.write(processed_frame)
-        print('processing video ...')
-
-        cv.imshow("result", processed_frame)
-        if cv.waitKey(1)  == ord('q'):
-            break
-    print('Successfully saved')
-    cap.release()
-    outputVideo.release()
+if __name__ == "__main__":
+    main()
