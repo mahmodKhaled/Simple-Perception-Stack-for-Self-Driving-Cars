@@ -16,6 +16,22 @@ the **.py** file contains the file that will run in the **_CMD_**
 
 > test_image_detection.py this is the python script that will run through **_CMD_**
 
+### Parameters List :
+1. Input (Video or Image) path 
+2. Output (Vido or Image) path
+3. Flag that indicates , the input whether it was an image or video
+4. a flag that indicates the **Debugging Mode**
+
+**_Third Parameter_** has only two values
+> 1 that indicates the input is Video
+
+> 0 that indicates the input is Image
+
+**_Fourth Parameter_** has only two values
+> 1 that indicates Debugging Mode Activated
+
+> 0 tha indicates Debugging Mode Deactivated
+
 ## Code Status
 ![build](https://img.shields.io/badge/Build-in%20progress-orange)
 
