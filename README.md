@@ -32,6 +32,16 @@ the **.py** file contains the file that will run in the **_CMD_**
 
 > 0 tha indicates Debugging Mode Deactivated
 
+the parameters to the **_CMD_** have to be as following:
+```
+python test_image_detection.py #First_Parameter #Second_parameter #Third_parameter #Fourth_parameter
+```
+**Smaple Example:**
+
+```
+python test_image_detection.py test_images/test1.jpg test_images 0 1
+```
+
 ## Code Status
 ![build](https://img.shields.io/badge/Build-in%20progress-orange)
 
