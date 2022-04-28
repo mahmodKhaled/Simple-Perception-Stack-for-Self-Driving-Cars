@@ -95,7 +95,7 @@ def make_coordinates (image, line_parameters):
     #slope, intercept = line_parameters
     height= image.shape[0]
     y1=height
-    y2=int(y1*(0.8))
+    y2=int(y1*(0.65))
     x1=int((y1-intercept)/slope)
     x2=int((y2-intercept)/slope)
     
