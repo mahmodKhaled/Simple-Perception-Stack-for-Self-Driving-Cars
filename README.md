@@ -32,7 +32,7 @@ the **.py** file contains the file that will run in the **_CMD_**
 
 > 0 tha indicates Debugging Mode Deactivated
 
-the parameters to the **_CMD_** have to be as following:
+### Parameters to the **_CMD_** Syntax :
 ```
 python test_image_detection.py #First_Parameter #Second_parameter #Third_parameter #Fourth_parameter
 ```
