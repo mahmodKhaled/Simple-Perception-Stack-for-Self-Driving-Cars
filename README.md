@@ -18,7 +18,7 @@ the **.py** file contains the file that will run in the **_CMD_**
 
 ### Parameters List :
 1. Input (Video or Image) path 
-2. Output (Vido or Image) path
+2. Output (Video or Image) path
 3. Flag that indicates , the input whether it was an image or video
 4. a flag that indicates the **Debugging Mode**
 
