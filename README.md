@@ -41,9 +41,16 @@ python test_image_detection.py #First_Parameter #Second_parameter #Third_paramet
 ```
 python test_image_detection.py test_images/test1.jpg test_images 0 1
 ```
+## Phase 2 - Objects detection
+In this stage we are locating and identifying the cars on the road
+### _Expected output from phase 2_
+![1](https://user-images.githubusercontent.com/54672453/170452052-d5eb1154-bbad-4010-aa7d-3f5aef81a17f.png)
+
+### _Notes_
+in this phase object detecion doesn't work with **_Debugging Mode_**
 
 ## Code Status
-![build](https://img.shields.io/badge/Build-in%20progress-orange)
+![build](https://img.shields.io/badge/Build-Finished-green)
 
 ## Contributers
 
