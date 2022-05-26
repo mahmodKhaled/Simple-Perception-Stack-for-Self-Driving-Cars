@@ -5,6 +5,15 @@ In this first phase, our goal is to write a **_software pipeline_** to identify 
 ### _Expected Output from Phase 1_
 ![expected output](https://user-images.githubusercontent.com/54672453/163658944-d04f1d58-98ae-4017-b196-ba660c7d4a1b.png)
 
+
+## Phase 2 - Objects detection
+In this stage we are locating and identifying the cars on the road
+### _Expected output from phase 2_
+![1](https://user-images.githubusercontent.com/54672453/170452052-d5eb1154-bbad-4010-aa7d-3f5aef81a17f.png)
+
+### _Notes_
+in this phase object detecion doesn't work with **_Debugging Mode_**
+
 ## Installation Guidelines
 
 The **_jupyter Notebook_** contains the code and Presentaion , we have written the actual codes plus some comments explaining what we were doing through out the project 
@@ -41,13 +50,6 @@ python test_image_detection.py #First_Parameter #Second_parameter #Third_paramet
 ```
 python test_image_detection.py test_images/test1.jpg test_images 0 1
 ```
-## Phase 2 - Objects detection
-In this stage we are locating and identifying the cars on the road
-### _Expected output from phase 2_
-![1](https://user-images.githubusercontent.com/54672453/170452052-d5eb1154-bbad-4010-aa7d-3f5aef81a17f.png)
-
-### _Notes_
-in this phase object detecion doesn't work with **_Debugging Mode_**
 
 ## Code Status
 ![build](https://img.shields.io/badge/Build-Finished-green)
