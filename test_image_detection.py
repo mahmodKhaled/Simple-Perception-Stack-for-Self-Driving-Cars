@@ -100,9 +100,9 @@ def debugging_mode_image(test_image, gray_test_image, RGB_test_image, hls_test_i
 # Yolo Helper Function this is the yolo algorithm is used to detect cars on the roads, this algorithms uses neural
 # networks, its version is YOLOv3-416
 def yolo(image):
-    weights_path = os.path.join("yolov3.weights")
-    config_path = os.path.join("yolov3.cfg")
-    labels_path = os.path.join("coco.names")
+    weights_path = os.path.abspath("C:/Users/mahmo/computer_vision_project/yolov3.weights")
+    config_path = os.path.abspath("C:/Users/mahmo/computer_vision_project/yolov3.cfg")
+    labels_path = os.path.abspath("C:/Users/mahmo/computer_vision_project/coco.names")
     net = cv.dnn.readNetFromDarknet(config_path, weights_path)
     names = net.getLayerNames()
     layers_names = [names[i - 1] for i in net.getUnconnectedOutLayers()]
